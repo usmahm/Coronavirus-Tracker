@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+body {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: "menu main"; }
+
+nav#side-nav {
+  grid-area: menu;
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  grid-template-areas: "logo" "navs";
+  justify-items: center;
+  align-items: center; }
+  nav#side-nav .logo {
+    grid-area: logo; }
+  nav#side-nav ul {
+    grid-area: navs; }
+    nav#side-nav ul li {
+      margin: 35px 0; }
+
+main#main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  grid-template-rows: 3rem 1fr;
+  column-gap: 13px;
+  padding: 0 13px;
+  grid-template-areas: "header header" "main-info total-info"; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header .top-cases-legend {
+    display: flex; }
+  header.main-header {
+    grid-area: header; }
+
+section.all-cases {
+  grid-area: main-info;
+  display: grid;
+  grid-template-rows: 452px calc(100vh - 3rem);
+  row-gap: 13px;
+  overflow-y: scroll; }
+  section.all-cases #top-cases-n-map {
+    display: grid;
+    grid-template-columns: 1fr 14rem;
+    column-gap: 10px;
+    padding: 0 13px;
+    padding-bottom: 13px; }
+    section.all-cases #top-cases-n-map #map,
+    section.all-cases #top-cases-n-map #top-countries {
+      display: grid;
+      grid-template-rows: 2.5rem 1fr; }
+    section.all-cases #top-cases-n-map #top-countries main {
+      display: grid;
+      grid-template-rows: repeat(4, 5.5rem);
+      align-content: space-between; }
+  section.all-cases #all-countries {
+    display: grid;
+    grid-template-rows: 4rem 1fr; }
+    section.all-cases #all-countries header {
+      display: grid;
+      grid-template-columns: 12rem repeat(6, 1fr);
+      column-gap: 5px;
+      padding-left: 23px; }
+    section.all-cases #all-countries main {
+      overflow-y: scroll;
+      scrollbar-width: none; }
+      section.all-cases #all-countries main::-webkit-scrollbar {
+        display: none; }
+      section.all-cases #all-countries main ul {
+        display: grid;
+        grid-auto-rows: 3rem;
+        align-items: center; }
+        section.all-cases #all-countries main ul li {
+          display: grid;
+          grid-template-columns: 12rem repeat(6, 1fr);
+          column-gap: 5px;
+          padding-left: 23px;
+          height: 100%;
+          align-items: center; }
+          section.all-cases #all-countries main ul li.grey-background {
+            background-color: #f2f3f5; }
+
+section.brief {
+  grid-area: total-info;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(11.75rem, 1fr)) auto;
+  row-gap: 8px;
+  align-content: center; }
+  section.brief div.total-cases {
+    display: grid;
+    grid-template-rows: 2.5rem 1fr; }
+    section.brief div.total-cases main {
+      display: grid;
+      grid-template-rows: 3rem 1fr;
+      row-gap: 15px; }
+      section.brief div.total-cases main .total-breakdown {
+        display: grid;
+        grid-template-columns: auto repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 14px;
+        row-gap: 12px;
+        grid-template-areas: "chart active recorded" "chart deaths ...";
+        align-items: center; }
+        section.brief div.total-cases main .total-breakdown .chart {
+          grid-area: chart;
+          width: 5rem; }
+        section.brief div.total-cases main .total-breakdown div p.num {
+          font-size: 1rem;
+          font-weight: 500; }
+        section.brief div.total-cases main .total-breakdown div.total__active {
+          grid-area: active; }
+        section.brief div.total-cases main .total-breakdown div.total__rec {
+          grid-area: recorded; }
+        section.brief div.total-cases main .total-breakdown div.total__deaths {
+          grid-area: deaths; }
+  section.brief .advice-div {
+    display: grid;
+    grid-template-rows: 2.5rem 1fr; }
+
+body {
+  background-color: #e5e5e5;
+  color: #001233;
+  font-size: 1rem; }
+
+nav#side-nav {
+  background-color: #FFFFFF; }
+  nav#side-nav img {
+    width: 34px; }
+
+header.main-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700; }
+header.main-header p {
+  font-weight: 400;
+  font-size: 1rem; }
+header p {
+  font-weight: 500; }
+
+#top-cases-n-map,
+#all-countries,
+.brief .total-cases,
+.advice-div {
+  border-radius: 15px;
+  background-color: #FFFFFF; }
+
+#top-cases-n-map #map .top-cases-legend span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 8px; }
+#top-cases-n-map #map .top-cases-legend .most {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center; }
+  #top-cases-n-map #map .top-cases-legend .most span {
+    background-color: #001233; }
+  #top-cases-n-map #map .top-cases-legend .most p {
+    color: #001233; }
+#top-cases-n-map #map .top-cases-legend .less {
+  margin-left: 20px;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center; }
+  #top-cases-n-map #map .top-cases-legend .less span {
+    background-color: #0466c8; }
+  #top-cases-n-map #map .top-cases-legend .less p {
+    color: #0466c8; }
+#top-cases-n-map #map main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #001233; }
+  #top-cases-n-map #map main img {
+    width: 100%; }
+#top-cases-n-map #top-countries header {
+  display: flex;
+  justify-content: flex-end; }
+#top-cases-n-map #top-countries main .country {
+  border: 2px dotted #001845;
+  border-radius: 9px;
+  padding: 5px 8px; }
+  #top-cases-n-map #top-countries main .country .country__name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 17px; }
+    #top-cases-n-map #top-countries main .country .country__name p {
+      font-weight: 500; }
+    #top-cases-n-map #top-countries main .country .country__name img {
+      margin-right: 5px; }
+  #top-cases-n-map #top-countries main .country .cases {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center; }
+    #top-cases-n-map #top-countries main .country .cases div p:nth-of-type(1) {
+      font-size: 0.7rem;
+      padding-bottom: 8px; }
+    #top-cases-n-map #top-countries main .country .cases div p:nth-of-type(2) {
+      font-size: 0.875rem;
+      font-weight: 500; }
+
+#all-countries header p {
+  font-weight: 500; }
+#all-countries ul li img {
+  margin-right: 5px; }
+
+.brief .total-cases,
+.brief .advice-div {
+  padding: 0 13px;
+  padding-bottom: 13px; }
+.brief main p,
+.brief p span {
+  font-size: 0.7rem; }
+.brief .total-cases .total-confirmed p.num {
+  font-size: 1.9rem;
+  font-weight: 700; }
+.brief .advice-div {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
+  .brief .advice-div main div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center; }
+    .brief .advice-div main div h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 5px; }
+    .brief .advice-div main div p,
+    .brief .advice-div main div a {
+      font-size: 0.875rem; }
+    .brief .advice-div main div a {
+      background-color: #001233;
+      color: #ffffff;
+      padding: 6px 13px;
+      margin-top: 5px;
+      margin-top: 8px;
+      border-radius: 8px; }
+
+/*# sourceMappingURL=main.css.map */

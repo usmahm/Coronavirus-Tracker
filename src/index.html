@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Covid-19 Tracker</title> 
+</head>
+<body>
+    <nav id="side-nav">
+        <img class="logo" src="./img/Icon.png" alt="">
+        <ul>
+            <li>
+                <img src="./img/Icon.png" alt="">
+            </li>
+            <li>
+                <img src="./img/Icon.png" alt="">
+            </li>
+            <li>
+                <img src="./img/Icon.png" alt="">
+            </li>
+            <li>
+                <img src="./img/Icon.png" alt="">
+            </li>
+        </ul>
+    </nav>
+    <main id="main">
+        <header class="main-header">
+            <h1>Coronavirus Tracker</h1>
+            <p class="last-updated-info">Last updated <span>June 19, 2020 12:30 (GMT +1)</span></p>
+        </header>
+        <section class="all-cases">
+            <section id="top-cases-n-map">
+                <div id="map">
+                    <header>
+                        <p>COVID-19 <span>- Affected Areas</span></p>
+                        <div class="top-cases-legend">
+                            <div class="most">
+                                <span></span>
+                                <p>Most Affected</p>
+                            </div>
+                            <div class="less">
+                                <span></span>
+                                <p>Less Affected</p>
+                            </div>
+                        </div>
+                    </header>
+                    <main>
+                        <img src="./img/map.png" alt="Map Showning Cases by country">
+                    </main>
+                </div>
+                <div id="top-countries">
+                    <header>
+                        <p>Top Countries</p>
+                    </header>
+                    <main>
+                        <div class="country">
+                            <div class="country__name">
+                                <img src="./img/flag.png" alt="">
+                                <p class="name">Nigeria</p>
+                            </div>
+                            <div class="cases">
+                                <div class="confirmed">
+                                    <p>CONFIRMED</p>
+                                    <P>81,630</P>
+                                </div>
+                                <div class="recovered">
+                                    <p>RECOVERED</p>
+                                    <P>20,000</P>
+                                </div>
+                                <div class="deaths">
+                                    <p>DEATHS</p>
+                                    <P>11,000</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country">
+                            <div class="country__name">
+                                <img src="./img/flag.png" alt="">
+                                <p class="name">USA</p>
+                            </div>
+                            <div class="cases">
+                                <div class="confirmed">
+                                    <p>CONFIRMED</p>
+                                    <P>81,630</P>
+                                </div>
+                                <div class="recovered">
+                                    <p>RECOVERED</p>
+                                    <P>20,000</P>
+                                </div>
+                                <div class="deaths">
+                                    <p>DEATHS</p>
+                                    <P>11,000</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country">
+                            <div class="country__name">
+                                <img src="./img/flag.png" alt="">
+                                <p class="name">CHINA</p>
+                            </div>
+                            <div class="cases">
+                                <div class="confirmed">
+                                    <p>CONFIRMED</p>
+                                    <P>81,630</P>
+                                </div>
+                                <div class="recovered">
+                                    <p>RECOVERED</p>
+                                    <P>20,000</P>
+                                </div>
+                                <div class="deaths">
+                                    <p>DEATHS</p>
+                                    <P>11,000</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country">
+                            <div class="country__name">
+                                <img src="./img/flag.png" alt="">
+                                <p class="name">CANADA</p>
+                            </div>
+                            <div class="cases">
+                                <div class="confirmed">
+                                    <p>CONFIRMED</p>
+                                    <P>81,630</P>
+                                </div>
+                                <div class="recovered">
+                                    <p>RECOVERED</p>
+                                    <P>20,000</P>
+                                </div>
+                                <div class="deaths">
+                                    <p>DEATHS</p>
+                                    <P>11,000</P>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </section>
+            <section id="all-countries">
+                <header>
+                    <p class="country-name">Country</p>
+                    <p class="total-cases">Total <br> Cases</p>
+                    <p class="new-cases">New <br> Cases</p>
+                    <p class="total-deaths">Total <br> Deaths</p>
+                    <p class="new-deaths">New <br> Deaths</p>
+                    <p class="total-recovered">Total <br> Recovered</p>
+                    <p class="active-cases">Active <br> Cases</p>
+                </header>
+                <main>
+                    <ul>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Nigeria</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">USA</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">China</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">South Africa</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Jamaica</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Canada</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">New Zealand</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Croatia</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Russia</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Togo</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Lebanon</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Qatar</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Brazil</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data grey-background">
+                            <p class="country-name"><img src="./img/flag.png" alt="">India</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                        <li class="country-data">
+                            <p class="country-name"><img src="./img/flag.png" alt="">Algeria</p>
+                            <p class="total-cases">81,000</p>
+                            <p class="new-cases">+201</p>
+                            <p class="total-deaths">8900</p>
+                            <p class="new-deaths">+32</p>
+                            <p class="total-recovered">12,000</p>
+                            <p class="active-cases">68,000</p> 
+                        </li>
+                    </ul>
+                </main>
+            </section>
+        </section>
+        <section class="brief">
+            <div id="total-cases" class="total-cases">
+                <header>
+                    <p>Coronavirus Cases <span>- Worldwide</span></p>
+                    <p>Total</p>
+                </header>
+                <main>
+                    <div class="total-confirmed">
+                        <p class="num">10,000,000</p>
+                        <p>Total Confirmed Cases</p>
+                    </div>
+                    <div class="total-breakdown">
+                        <img class="chart" src="./img/pie chart.png" alt="">
+                        <div class="total__active">
+                            <p class="num">8,869,000</p>
+                            <p>Active Cases</p>
+                        </div>
+                        <div class="total__rec">
+                            <p class="num">290,000</p>
+                            <p>Recovered</p>
+                        </div>
+                        <div class="total__deaths">
+                            <p class="num">13,000</p>
+                            <p>Deaths</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="total-cases__daily" class="total-cases">
+                <header>
+                    <p>Coronavirus Cases <span>- Worldwide</span></p>
+                    <p>TODAY</p>
+                </header>
+                <main>
+                    <div class="total-confirmed">
+                        <p class="num">10,000,000</p>
+                        <p>Total Confirmed Cases</p>
+                    </div>
+                    <div class="total-breakdown">
+                        <img class="chart" src="./img/pie chart.png" alt="">
+                        <div class="total__active">
+                            <p class="num">8,869,000</p>
+                            <p>Active Cases</p>
+                        </div>
+                        <div class="total__rec">
+                            <p class="num">290,000</p>
+                            <p>Recovered</p>
+                        </div>
+                        <div class="total__deaths">
+                            <p class="num">13,000</p>
+                            <p>Deaths</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="advice-div">
+                <header>
+                    <p>Prevention and Advice</p>
+                </header>
+                <main>
+                    <!-- <img src="./img/pie chart.png" alt=""> -->
+                    <div>
+                        <h3>Maintain social distancing</h2>
+                        <p>Maintain at least 1 metre (3 feet) distance
+                           between yourself and anyone who is coughing
+                           or sneezing. If  you are too close, there's a 
+                           chance you get infected.
+                        </p>
+                        <a href="#">Learn More --></a>
+                    </div>
+                </main>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: #e5e5e5;
+  background-color: #E5E5E5;
   color: $text-color;
   font-size: 1rem;
 }
@@ -102,6 +102,7 @@ header {
       align-items: center;
       justify-content: center;
       border: 1px solid $text-color;
+      padding: 7px;
 
       img {
         width: 100%;
@@ -131,6 +132,8 @@ header {
 
           img {
             margin-right: 5px;
+            width: 17px;
+            height: 11px;
           }
         }
 
@@ -156,6 +159,8 @@ header {
 
 #all-countries {
   header {
+    box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+    border-bottom: 1px solid #0012338f;
     p {
       font-weight: 500;
     }
@@ -163,11 +168,31 @@ header {
 
   ul {
       li {
+        border-bottom: 1px solid #0012338f;
+          .total-deaths, .new-deaths {
+            color:  #e85347;
+          }
+
+          .country-name {
+            display: grid;
+            grid-template-columns: 17px 1fr;
+            column-gap: 5px;
+            align-items: center;
+
+            p {
+              display: inline-block;
+            }
+          }
           img {
-              margin-right: 5px;
+              width: 17px;
+              height: 11px;
           }
       }
   }
+}
+
+#top-cases-n-map, #all-countries, div.total-cases, .advice-div, #side-nav {
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
 }
 
 ///////////////////// Brief Section
@@ -189,6 +214,22 @@ header {
         font-size: 1.9rem;
         font-weight: 700;
       }
+    }
+  }
+
+  #total-cases {
+    .total__active, .total__deaths, .total__rec {
+      padding-left: 5px;
+      border-left: 2px solid;
+    }
+    .total__active {
+      border-color: #3f506f;
+    }
+    .total__deaths {
+      border-color: #e85347;
+    }
+    .total__rec {
+      border-color: #1ee0ac;
     }
   }
 

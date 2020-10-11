@@ -79,7 +79,6 @@ section.all-cases {
     #top-countries main {
       display: grid;
       grid-template-rows: repeat(4, 5.5rem);
-      // row-gap: $space-between;
       align-content: space-between;
     }
   }
@@ -155,6 +154,7 @@ section.brief {
         .chart {
           grid-area: chart;
           width: 5rem;
+          height: 5rem;
         }
 
         div {

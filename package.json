@@ -20,6 +20,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.11.5"
+    "@amcharts/amcharts4": "^4.10.7",
+    "@amcharts/amcharts4-geodata": "^4.1.17",
+    "axios": "^0.20.0",
+    "babel-polyfill": "^6.26.0",
+    "fast-sort": "^2.2.0"
   }
 }

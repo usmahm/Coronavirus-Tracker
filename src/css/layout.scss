@@ -1,5 +1,11 @@
 @import "_variables.scss";
 
+@mixin media-min-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
 body {
   display: grid;
   grid-template-columns: 3rem 1fr;
@@ -28,6 +34,10 @@ nav#side-nav {
       margin: 35px 0;
     }
   }
+
+  @include media-min-width(40rem) {
+    display: none;
+  }
 }
 
 main#main {
@@ -40,6 +50,11 @@ main#main {
   grid-template-areas:
     "header header"
     "main-info total-info";
+
+  @include media-min-width(40rem) {
+    grid-template-columns: 1fr;
+    display: block;
+  }
 }
 
 header {
@@ -97,7 +112,7 @@ section.all-cases {
     main {
       overflow-y: scroll;
       &::-webkit-scrollbar {
-          display: none;
+        display: none;
       }
       scrollbar-width: none;
       ul {

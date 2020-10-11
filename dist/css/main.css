@@ -27,6 +27,9 @@ nav#side-nav {
     grid-area: navs; }
     nav#side-nav ul li {
       margin: 35px 0; }
+  @media (max-width: 40rem) {
+    nav#side-nav {
+      display: none; } }
 
 main#main {
   grid-area: main;
@@ -36,6 +39,10 @@ main#main {
   column-gap: 13px;
   padding: 0 13px;
   grid-template-areas: "header header" "main-info total-info"; }
+  @media (max-width: 40rem) {
+    main#main {
+      grid-template-columns: 1fr;
+      display: block; } }
 
 header {
   display: flex;

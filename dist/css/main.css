@@ -13,6 +13,9 @@ body {
   grid-template-columns: 3rem 1fr;
   grid-template-rows: 100vh;
   grid-template-areas: "menu main"; }
+  @media (max-width: 40rem) {
+    body {
+      display: block; } }
 
 nav#side-nav {
   grid-area: menu;
@@ -42,7 +45,9 @@ main#main {
   @media (max-width: 40rem) {
     main#main {
       grid-template-columns: 1fr;
-      display: block; } }
+      grid-template-rows: 3rem 1fr;
+      padding: 0 6px;
+      grid-template-areas: "header" "total-info" "main-info"; } }
 
 header {
   display: flex;
@@ -59,12 +64,19 @@ section.all-cases {
   grid-template-rows: 452px calc(100vh - 3rem);
   row-gap: 13px;
   overflow-y: scroll; }
+  @media (max-width: 40rem) {
+    section.all-cases {
+      overflow-y: visible;
+      grid-template-rows: 660px calc(100vh - 3rem); } }
   section.all-cases #top-cases-n-map {
     display: grid;
     grid-template-columns: 1fr 14rem;
     column-gap: 10px;
     padding: 0 13px;
     padding-bottom: 13px; }
+    @media (max-width: 40rem) {
+      section.all-cases #top-cases-n-map {
+        grid-template-columns: 1fr; } }
     section.all-cases #top-cases-n-map #map,
     section.all-cases #top-cases-n-map #top-countries {
       display: grid;
@@ -81,6 +93,10 @@ section.all-cases {
       grid-template-columns: 12rem repeat(6, 1fr);
       column-gap: 5px;
       padding-left: 23px; }
+      @media (max-width: 40rem) {
+        section.all-cases #all-countries header {
+          padding-left: 10px;
+          grid-template-columns: 7rem repeat(6, 1fr); } }
     section.all-cases #all-countries main {
       overflow-y: scroll;
       scrollbar-width: none; }
@@ -97,6 +113,10 @@ section.all-cases {
           padding-left: 23px;
           height: 100%;
           align-items: center; }
+          @media (max-width: 40rem) {
+            section.all-cases #all-countries main ul li {
+              padding-left: 10px;
+              grid-template-columns: 7rem repeat(6, 1fr); } }
           section.all-cases #all-countries main ul li.grey-background {
             background-color: #f2f3f5; }
 
@@ -137,6 +157,9 @@ section.brief {
   section.brief .advice-div {
     display: grid;
     grid-template-rows: 2.5rem 1fr; }
+    @media (max-width: 40rem) {
+      section.brief .advice-div {
+        display: none; } }
 
 body {
   background-color: #E5E5E5;
@@ -151,9 +174,15 @@ nav#side-nav {
 header.main-header h1 {
   font-size: 1.9rem;
   font-weight: 700; }
+  @media (max-width: 40rem) {
+    header.main-header h1 {
+      font-size: 1.4rem; } }
 header.main-header p {
   font-weight: 400;
   font-size: 1rem; }
+  @media (max-width: 40rem) {
+    header.main-header p {
+      font-size: 0.75rem; } }
 header p {
   font-weight: 500; }
 
@@ -237,8 +266,14 @@ header p {
   border-bottom: 1px solid #0012338f; }
   #all-countries header p {
     font-weight: 500; }
+    @media (max-width: 40rem) {
+      #all-countries header p {
+        font-size: 0.7rem; } }
 #all-countries ul li {
   border-bottom: 1px solid #0012338f; }
+  @media (max-width: 40rem) {
+    #all-countries ul li {
+      font-size: 0.7rem; } }
   #all-countries ul li .total-deaths, #all-countries ul li .new-deaths {
     color: #e85347; }
   #all-countries ul li .country-name {

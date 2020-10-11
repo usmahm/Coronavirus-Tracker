@@ -44,11 +44,18 @@ header {
     h1 {
       font-size: 1.9rem;
       font-weight: 700;
+      @include media-min-width(40rem) {
+        font-size: 1.4rem;
+      }
     }
 
     p {
       font-weight: 400;
       font-size: 1rem;
+
+      @include media-min-width(40rem) {
+        font-size: 0.75rem;
+      }
     }
   }
 
@@ -163,12 +170,18 @@ header {
     border-bottom: 1px solid #0012338f;
     p {
       font-weight: 500;
+      @include media-min-width(40rem) {
+        font-size: 0.7rem;     
+      }
     }
   }
 
   ul {
       li {
         border-bottom: 1px solid #0012338f;
+        @include media-min-width(40rem) {
+          font-size: 0.7rem;   
+        }
           .total-deaths, .new-deaths {
             color:  #e85347;
           }

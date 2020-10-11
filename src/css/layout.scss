@@ -58,7 +58,9 @@ main#main {
   @include media-min-width(40rem) {
     grid-template-columns: 1fr;
     grid-template-rows: 3rem 1fr;
+    row-gap: 6px;
     padding: 0 6px;
+    padding-top: 10px;
     grid-template-areas:
       "header"
       "total-info"
@@ -77,6 +79,11 @@ header {
 
   &.main-header {
     grid-area: header;
+
+    @include media-min-width(40rem) {
+      padding-bottom: 4px;
+      display: block;
+    }
   }
 }
 
@@ -120,15 +127,22 @@ section.all-cases {
     display: grid;
     grid-template-rows: 4rem 1fr;
 
-    header {
+    @include media-min-width(40rem) {
+      grid-template-columns: 100%;
+      overflow-x: scroll; 
+    }
+
+    header div {
       display: grid;
       grid-template-columns: 12rem repeat(6, 1fr);
       column-gap: 5px;
       padding-left: 23px;
+      height: 100%;
+      align-items: center;
 
       @include media-min-width(40rem) {
         padding-left: 10px;
-        grid-template-columns: 7rem repeat(6, 1fr);     
+        grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));   
       }
     }
 
@@ -138,6 +152,10 @@ section.all-cases {
         display: none;
       }
       scrollbar-width: none;
+
+      @include media-min-width(40rem) {
+        overflow: visible; 
+      }
       ul {
         display: grid;
         grid-auto-rows: 3rem;
@@ -152,7 +170,7 @@ section.all-cases {
 
           @include media-min-width(40rem) {
             padding-left: 10px;
-            grid-template-columns: 7rem repeat(6, 1fr);
+            grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));
           }
 
           &.grey-background {

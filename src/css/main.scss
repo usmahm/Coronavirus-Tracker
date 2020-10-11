@@ -46,6 +46,7 @@ header {
       font-weight: 700;
       @include media-min-width(40rem) {
         font-size: 1.4rem;
+        padding-bottom: 4px;
       }
     }
 
@@ -165,7 +166,7 @@ header {
 }
 
 #all-countries {
-  header {
+  header div {
     box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
     border-bottom: 1px solid #0012338f;
     p {
@@ -224,7 +225,7 @@ header {
   .total-cases {
     .total-confirmed {
       p.num {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         font-weight: 700;
       }
     }

@@ -1,9 +1,10 @@
 export const elements = {
-    allCountriesCases: document.querySelector('#all-countries ul'),
+    allCountriesCases: document.querySelector('#all-countries'),
     lastUpdatedTime: document.querySelector('.last-updated-info'),
     totalCasesDiv: document.getElementById('total-cases'),
     dailyCasesDiv: document.getElementById('total-cases__daily'),
-    topCountriesDiv: document.getElementById('top-countries')
+    topCountriesDiv: document.getElementById('top-countries'),
+
 }
 
 export const colours = {

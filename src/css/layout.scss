@@ -134,10 +134,11 @@ section.all-cases {
 
     header div {
       display: grid;
-      grid-template-columns: 12rem repeat(6, 1fr);
+      grid-template-columns: 8rem repeat(6, 1fr);
       column-gap: 5px;
       padding-left: 23px;
       height: 100%;
+      width: 100%;
       align-items: center;
 
       @include media-min-width(40rem) {
@@ -162,7 +163,7 @@ section.all-cases {
         align-items: center;
         li {
           display: grid;
-          grid-template-columns: 12rem repeat(6, 1fr);
+          grid-template-columns: 8rem repeat(6, 1fr);
           column-gap: 5px;
           padding-left: 23px;
           height: 100%;

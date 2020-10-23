@@ -13,7 +13,7 @@ const createAllCasesMarkup = (country, index) => {
             <p class="active-cases">${formatNumber(country.activeCases)}</p> 
         </li>
     `
-    elements.allCountriesCases.insertAdjacentHTML('beforeend', markup);
+    elements.allCountriesCases.querySelector('ul').insertAdjacentHTML('beforeend', markup);
 };
 
 const createTopCountriesMarkup = (data) => {
@@ -55,3 +55,11 @@ export const renderAllCountriesCases = (countryCases) => {
     name.forEach((el, index) => createAllCasesMarkup(el, index));
 }
 
+export const clearHTMLContent = (element) => {
+    element.innerHTML = '';
+}
+
+export const changeSortIcon = (el) => {
+    elements.allCountriesCases.querySelectorAll('header div p svg').forEach(el => el.innerHTML = '<use xlink:href="#no-sort" />');
+    el.querySelector('svg').innerHTML = `<use class="no-sort" xlink:href="#sort-${el.dataset.sortby}" />`;
+}

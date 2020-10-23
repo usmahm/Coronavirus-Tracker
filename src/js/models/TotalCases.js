@@ -2,55 +2,7 @@ import 'babel-polyfill';
 import axios from 'axios';
 import sort from 'fast-sort';
 
-// const cases = {
-//     "data": {
-//       "updated": 1602318702254,
-//       "cases": 37139812,
-//       "todayCases": 41641,
-//       "deaths": 1073149,
-//       "todayDeaths": 932,
-//       "recovered": 27912579,
-//       "todayRecovered": 21995,
-//       "active": 8154084,
-//       "critical": 68440,
-//       "casesPerOneMillion": 4765,
-//       "deathsPerOneMillion": 137.7,
-//       "tests": 696201733,
-//       "testsPerOneMillion": 89490.71,
-//       "population": 7779597646,
-//       "oneCasePerPeople": 0,
-//       "oneDeathPerPeople": 0,
-//       "oneTestPerPeople": 0,
-//       "activePerOneMillion": 1048.14,
-//       "recoveredPerOneMillion": 3587.92,
-//       "criticalPerOneMillion": 8.8,
-//       "affectedCountries": 216
-//     },
-//     "status": 200,
-//     "statusText": "OK",
-//     "headers": {
-//       "content-type": "application/json; charset=utf-8"
-//     },
-//     "config": {
-//       "url": "https://corona.lmao.ninja/v2/all?yesterday",
-//       "headers": {
-//         "Accept": "application/json, text/plain, */*"
-//       },
-//       "transformRequest": [
-//         null
-//       ],
-//       "transformResponse": [
-//         null
-//       ],
-//       "timeout": 0,
-//       "xsrfCookieName": "XSRF-TOKEN",
-//       "xsrfHeaderName": "X-XSRF-TOKEN",
-//       "maxContentLength": -1,
-//       "maxBodyLength": -1,
-//       "method": "get"
-//     },
-//     "request": {}
-//   }
+// import { totalCasesData } from './data'
 
 export default class TotalCases {
     constructor() {
@@ -60,7 +12,8 @@ export default class TotalCases {
     async getTotalCases () {
         try {
             const res = await axios("https://corona.lmao.ninja/v2/all?yesterday");
-            // const res = cases;
+            // console.log(totalCasesData)
+            // const res = totalCasesData;
             // console.log(res)
             this.totalCases = res.data;
         } catch (err) {

@@ -171,8 +171,24 @@ header {
     border-bottom: 1px solid #0012338f;
     p {
       font-weight: 500;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
       @include media-min-width(40rem) {
         font-size: 0.7rem;     
+      }
+
+      svg.sort-icon {
+        width: 20px;
+        height: 14px;
+        fill: $text-color;
+
+        // use.no-sort {
+        //   transform: rotate(90deg);
+        // }
       }
     }
   }
@@ -282,4 +298,10 @@ header {
       }
     }
   }
+}
+
+#no-sort {
+  color: blue;
+  width: 20px;
+  height: 20px;
 }

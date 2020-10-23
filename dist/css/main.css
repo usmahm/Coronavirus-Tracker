@@ -100,10 +100,11 @@ section.all-cases {
         overflow-x: scroll; } }
     section.all-cases #all-countries header div {
       display: grid;
-      grid-template-columns: 12rem repeat(6, 1fr);
+      grid-template-columns: 8rem repeat(6, 1fr);
       column-gap: 5px;
       padding-left: 23px;
       height: 100%;
+      width: 100%;
       align-items: center; }
       @media (max-width: 40rem) {
         section.all-cases #all-countries header div {
@@ -123,7 +124,7 @@ section.all-cases {
         align-items: center; }
         section.all-cases #all-countries main ul li {
           display: grid;
-          grid-template-columns: 12rem repeat(6, 1fr);
+          grid-template-columns: 8rem repeat(6, 1fr);
           column-gap: 5px;
           padding-left: 23px;
           height: 100%;
@@ -281,10 +282,20 @@ header p {
   box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
   border-bottom: 1px solid #0012338f; }
   #all-countries header div p {
-    font-weight: 500; }
+    font-weight: 500;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; }
     @media (max-width: 40rem) {
       #all-countries header div p {
         font-size: 0.7rem; } }
+    #all-countries header div p svg.sort-icon {
+      width: 20px;
+      height: 14px;
+      fill: #001233; }
 #all-countries ul li {
   border-bottom: 1px solid #0012338f; }
   @media (max-width: 40rem) {
@@ -349,5 +360,10 @@ header p {
       margin-top: 5px;
       margin-top: 8px;
       border-radius: 8px; }
+
+#no-sort {
+  color: blue;
+  width: 20px;
+  height: 20px; }
 
 /*# sourceMappingURL=main.css.map */

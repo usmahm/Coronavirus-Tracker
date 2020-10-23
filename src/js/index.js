@@ -4,6 +4,7 @@ import * as countryCasesView from './views/countriesCasesView';
 import * as totalCasesView from './views/totalCasesView';
 import * as dataVisView from './views/dataVisView';
 import 'babel-polyfill';
+import { elements } from './views/base';
 
 
 /** Global state of the app
@@ -15,6 +16,19 @@ window.state = state
 /**
  * Countries Cases Controller
  */
+
+const handleSort = (el, data) => {
+
+    state.countriesCases.countriesCases = state.countriesCases.sortCountriesData(el, data);
+    console.log(state.countriesCases.countriesCases);
+
+    // Clear Previous Rendered Content
+    countryCasesView.clearHTMLContent(elements.allCountriesCases.querySelector('ul'));
+
+    // Render the new sorted Cases and change sort icons
+    countryCasesView.changeSortIcon(el);
+    countryCasesView.renderAllCountriesCases(state.countriesCases.countriesCases)
+}
 
 const controlCountriesCases = async () => {
     state.countriesCases = new CountriesCases();
@@ -31,6 +45,15 @@ const controlCountriesCases = async () => {
     // Render all countries cases to the DOM 
     countryCasesView.renderAllCountriesCases(state.countriesCases.countriesCases);
     countryCasesView.renderTopCountries(state.countriesCases.countriesCases);
+    const countryCasesDOMHeader = elements.allCountriesCases.querySelectorAll('header div p');
+    console.log(countryCasesDOMHeader);
+
+    countryCasesDOMHeader.forEach(el => {
+        el.addEventListener('click', () => {
+            // Sort and Render the new sorted cases
+            handleSort(el, state.countriesCases.countriesCases);
+        });
+    })
     
 }
 

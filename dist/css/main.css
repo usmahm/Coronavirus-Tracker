@@ -383,6 +383,10 @@ header p {
       width: 20px;
       height: 14px;
       fill: #001233; }
+      @media (max-width: 40rem) {
+        #all-countries header div p svg.sort-icon {
+          width: 15px;
+          height: 10px; } }
 
 #all-countries ul li {
   border-bottom: 1px solid #0012338f; }

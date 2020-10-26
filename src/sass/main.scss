@@ -295,6 +295,12 @@ header {
         width: 20px;
         height: 14px;
         fill: $text-color;
+
+        @include media-min-width(40rem) {
+          width: 15px;
+          height: 10px;    
+        }
+  
       }
     }
   }

@@ -36,7 +36,7 @@ export const renderTodayCases = data => {
                 <p>Total Confirmed Cases</p>
             </div>
             <div class="total-breakdown">
-                <img class="chart" src="./img/disease-prevention.svg" alt="">
+                <svg class="chart"><use xlink:href="#disease-prevention" /></svg>
                 <div class="total__active">
                     <p class="num">${formatNumber(data.critical)}</p>
                     <p>Critical</p>

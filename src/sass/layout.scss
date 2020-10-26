@@ -33,10 +33,6 @@ nav#side-nav {
 
   ul {
     grid-area: navs;
-
-    li {
-      margin: 35px 0;
-    }
   }
 
   @include media-min-width(40rem) {
@@ -93,7 +89,11 @@ section.all-cases {
   grid-template-rows: 452px calc(100vh - 3rem);
   row-gap: $space-between;
   overflow-y: scroll;
-
+  
+  width: 100%;
+  max-width: 75rem;
+  justify-self: center;
+  
   @include media-min-width(40rem) {
     overflow-y: visible;
     grid-template-rows: 660px calc(100vh - 3rem);
@@ -144,6 +144,7 @@ section.all-cases {
       @include media-min-width(40rem) {
         padding-left: 10px;
         grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));   
+        width: auto;
       }
     }
 

@@ -31,12 +31,107 @@ body {
   font-size: 1rem;
 }
 
+@keyframes show-about {
+  0% {
+    left: 29px;
+  }
+  
+  80% {
+    left: 63px;
+  }
+
+  100% {
+    left: 29px;
+  }
+}
+
 nav#side-nav {
   background-color: $background-color;
+  transition: .3s;
+  position: relative;
 
-  img {
-    width: 34px;
+  &:hover {
+      div.about-section {
+        transform: rotate(270deg) translateX(-50%);
+        animation: show-about 3s ease-out;
+        display: flex;
+        // left: 23px;
+      }
   }
+
+  svg.logo {
+    width: 2.12rem;
+    height: 2.12rem;
+    fill: $text-color;
+  }
+  
+
+  ul {
+    position: relative;
+    background-color: $background-color;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    li {
+      width: 2.12rem;
+      height: 2.12rem;
+      background-color: $background-color;
+      position: relative;
+      z-index: 200;
+      box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin: 17px 0;
+
+      &.prev:hover, &.news:hover, &.checker:hover, &.faq:hover {
+        div {
+          transform: rotate(270deg) translateX(-50%);
+          display: flex;
+          left: 56px;
+        }
+      }
+
+        img {
+          width: 1.9rem;
+        }
+  
+  
+       a {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+       }
+
+    }
+  }
+      div {
+        display: none;
+        position: absolute;
+        padding: 0 21px;
+        height: 30px;
+        justify-content: center;
+        background-color: white;
+        transform-origin: left;
+        align-items: center;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0px 5px 5px -4px rgba(31, 43, 58, 0.5);
+        font-weight: 500;
+  
+        p {
+          color: $text-color;
+          transition: .3s;
+          white-space: nowrap;
+        }
+      }
 }
 
 header {
@@ -167,7 +262,7 @@ header {
 
 #all-countries {
   header div {
-    box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+    box-shadow: 0 10px 28px -14px rgba(31, 43, 58, 0.5);
     border-bottom: 1px solid #0012338f;
     p {
       font-weight: 500;
@@ -185,10 +280,6 @@ header {
         width: 20px;
         height: 14px;
         fill: $text-color;
-
-        // use.no-sort {
-        //   transform: rotate(90deg);
-        // }
       }
     }
   }

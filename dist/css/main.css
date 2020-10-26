@@ -21,15 +21,13 @@ nav#side-nav {
   grid-area: menu;
   display: grid;
   grid-template-rows: 3rem 1fr;
-  grid-template-areas: "logo" "navs";
+  grid-template-areas: "logo" "navs";
   justify-items: center;
   align-items: center; }
   nav#side-nav .logo {
     grid-area: logo; }
   nav#side-nav ul {
     grid-area: navs; }
-    nav#side-nav ul li {
-      margin: 35px 0; }
   @media (max-width: 40rem) {
     nav#side-nav {
       display: none; } }
@@ -41,7 +39,7 @@ main#main {
   grid-template-rows: 3rem 1fr;
   column-gap: 13px;
   padding: 0 13px;
-  grid-template-areas: "header header" "main-info total-info"; }
+  grid-template-areas: "header header" "main-info total-info"; }
   @media (max-width: 40rem) {
     main#main {
       grid-template-columns: 1fr;
@@ -49,7 +47,7 @@ main#main {
       row-gap: 6px;
       padding: 0 6px;
       padding-top: 10px;
-      grid-template-areas: "header" "total-info" "main-info"; } }
+      grid-template-areas: "header" "total-info" "main-info"; } }
 
 header {
   display: flex;
@@ -69,7 +67,10 @@ section.all-cases {
   display: grid;
   grid-template-rows: 452px calc(100vh - 3rem);
   row-gap: 13px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 75rem;
+  justify-self: center; }
   @media (max-width: 40rem) {
     section.all-cases {
       overflow-y: visible;
@@ -109,7 +110,8 @@ section.all-cases {
       @media (max-width: 40rem) {
         section.all-cases #all-countries header div {
           padding-left: 10px;
-          grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr)); } }
+          grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));
+          width: auto; } }
     section.all-cases #all-countries main {
       overflow-y: scroll;
       scrollbar-width: none; }
@@ -155,7 +157,7 @@ section.brief {
         grid-template-rows: repeat(2, 1fr);
         column-gap: 14px;
         row-gap: 12px;
-        grid-template-areas: "chart active recorded" "chart deaths ...";
+        grid-template-areas: "chart active recorded" "chart deaths ...";
         align-items: center; }
         section.brief div.total-cases main .total-breakdown .chart {
           grid-area: chart;
@@ -182,10 +184,76 @@ body {
   color: #001233;
   font-size: 1rem; }
 
+@keyframes show-about {
+  0% {
+    left: 29px; }
+  80% {
+    left: 63px; }
+  100% {
+    left: 29px; } }
+
 nav#side-nav {
-  background-color: #FFFFFF; }
-  nav#side-nav img {
-    width: 34px; }
+  background-color: #FFFFFF;
+  transition: .3s;
+  position: relative; }
+  nav#side-nav:hover div.about-section {
+    transform: rotate(270deg) translateX(-50%);
+    animation: show-about 3s ease-out;
+    display: flex; }
+  nav#side-nav svg.logo {
+    width: 2.12rem;
+    height: 2.12rem;
+    fill: #001233; }
+  nav#side-nav ul {
+    position: relative;
+    background-color: #FFFFFF;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    nav#side-nav ul li {
+      width: 2.12rem;
+      height: 2.12rem;
+      background-color: #FFFFFF;
+      position: relative;
+      z-index: 200;
+      box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin: 17px 0; }
+      nav#side-nav ul li.prev:hover div, nav#side-nav ul li.news:hover div, nav#side-nav ul li.checker:hover div, nav#side-nav ul li.faq:hover div {
+        transform: rotate(270deg) translateX(-50%);
+        display: flex;
+        left: 56px; }
+      nav#side-nav ul li img {
+        width: 1.9rem; }
+      nav#side-nav ul li a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
+  nav#side-nav div {
+    display: none;
+    position: absolute;
+    padding: 0 21px;
+    height: 30px;
+    justify-content: center;
+    background-color: white;
+    transform-origin: left;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 5px 5px -4px rgba(31, 43, 58, 0.5);
+    font-weight: 500; }
+    nav#side-nav div p {
+      color: #001233;
+      transition: .3s;
+      white-space: nowrap; }
 
 header.main-header h1 {
   font-size: 1.9rem;
@@ -194,12 +262,14 @@ header.main-header h1 {
     header.main-header h1 {
       font-size: 1.4rem;
       padding-bottom: 4px; } }
+
 header.main-header p {
   font-weight: 400;
   font-size: 1rem; }
   @media (max-width: 40rem) {
     header.main-header p {
       font-size: 0.75rem; } }
+
 header p {
   font-weight: 500; }
 
@@ -215,6 +285,7 @@ header p {
   height: 9px;
   border-radius: 50%;
   margin-right: 8px; }
+
 #top-cases-n-map #map .top-cases-legend .most {
   display: flex;
   display: -webkit-box;
@@ -226,6 +297,7 @@ header p {
     background-color: #001233; }
   #top-cases-n-map #map .top-cases-legend .most p {
     color: #001233; }
+
 #top-cases-n-map #map .top-cases-legend .less {
   margin-left: 20px;
   display: flex;
@@ -238,6 +310,7 @@ header p {
     background-color: #0466c8; }
   #top-cases-n-map #map .top-cases-legend .less p {
     color: #0466c8; }
+
 #top-cases-n-map #map main {
   display: flex;
   align-items: center;
@@ -246,9 +319,11 @@ header p {
   padding: 7px; }
   #top-cases-n-map #map main img {
     width: 100%; }
+
 #top-cases-n-map #top-countries header {
   display: flex;
   justify-content: flex-end; }
+
 #top-cases-n-map #top-countries main .country {
   border: 2px dotted #001845;
   border-radius: 9px;
@@ -279,7 +354,7 @@ header p {
       font-weight: 500; }
 
 #all-countries header div {
-  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+  box-shadow: 0 10px 28px -14px rgba(31, 43, 58, 0.5);
   border-bottom: 1px solid #0012338f; }
   #all-countries header div p {
     font-weight: 500;
@@ -296,6 +371,7 @@ header p {
       width: 20px;
       height: 14px;
       fill: #001233; }
+
 #all-countries ul li {
   border-bottom: 1px solid #0012338f; }
   @media (max-width: 40rem) {
@@ -321,21 +397,28 @@ header p {
 .brief .advice-div {
   padding: 0 13px;
   padding-bottom: 13px; }
+
 .brief main p,
 .brief p span {
   font-size: 0.7rem; }
+
 .brief .total-cases .total-confirmed p.num {
   font-size: 1.8rem;
   font-weight: 700; }
+
 .brief #total-cases .total__active, .brief #total-cases .total__deaths, .brief #total-cases .total__rec {
   padding-left: 5px;
   border-left: 2px solid; }
+
 .brief #total-cases .total__active {
   border-color: #3f506f; }
+
 .brief #total-cases .total__deaths {
   border-color: #e85347; }
+
 .brief #total-cases .total__rec {
   border-color: #1ee0ac; }
+
 .brief .advice-div {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
@@ -365,5 +448,3 @@ header p {
   color: blue;
   width: 20px;
   height: 20px; }
-
-/*# sourceMappingURL=main.css.map */

@@ -87,6 +87,7 @@ section.all-cases {
   grid-area: main-info;
   display: grid;
   grid-template-rows: 452px calc(100vh - 3rem);
+  
   row-gap: $space-between;
   overflow-y: scroll;
   
@@ -96,7 +97,7 @@ section.all-cases {
   
   @include media-min-width(40rem) {
     overflow-y: visible;
-    grid-template-rows: 660px calc(100vh - 3rem);
+    grid-template-rows: 660px 100vh;
   }
 
   #top-cases-n-map {

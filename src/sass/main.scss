@@ -170,12 +170,23 @@ header {
 
 #top-cases-n-map {
   #map {
+    p {
+      @include media-min-width(40rem) {
+        font-size: 0.8rem;
+      }
+    }
     .top-cases-legend {
       span {
         width: 9px;
         height: 9px;
         border-radius: 50%;
         margin-right: 8px;
+
+        @include media-min-width(40rem) {
+          width: 6px;
+          height: 6px;
+          border-radius: 500px;
+        }
       }
 
       .most {
@@ -191,6 +202,10 @@ header {
       .less {
         margin-left: 20px;
         @include flex-space-between();
+
+        @include media-min-width(40rem) {
+          margin-left: 0;
+        }
         span {
           background-color: #0466c8;
         }

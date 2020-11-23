@@ -4,7 +4,7 @@ import sort from 'fast-sort';
 import { elements } from '../views/base';
 
 // Test
-import { cases } from './data'
+// import { cases } from './data'
 
 export default class CountriesCases {
     constructor() {
@@ -13,8 +13,8 @@ export default class CountriesCases {
 
     async getCountriesCases() {
         try {
-            // const res = await axios('https://corona.lmao.ninja/v2/countries?yesterday&sort');
-            const res = cases;
+            const res = await axios('https://corona.lmao.ninja/v2/countries?yesterday&sort');
+            // const res = cases;
             this.allCountriesCases = res.data;
             // console.log(res)
         } catch (error) {

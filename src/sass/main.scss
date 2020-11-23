@@ -14,15 +14,18 @@
 
 @mixin display-flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flex-space-between {
-  display: flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  @include display-flex;
   justify-content: space-between;
-  align-items: center;
+}
+
+@mixin width-heigth ($width, $height) {
+  width: $width;
+  height: $height;
 }
 
 body {
@@ -54,14 +57,12 @@ nav#side-nav {
       div.about-section {
         transform: rotate(270deg) translateX(-50%);
         animation: show-about 3s ease-out;
-        display: flex;
-        // left: 23px;
+        @include display-flex;
       }
   }
 
   svg.logo {
-    width: 2.12rem;
-    height: 2.12rem;
+    @include width-heigth(2.12rem, 2.12rem);
     fill: $text-color;
   }
   
@@ -71,28 +72,23 @@ nav#side-nav {
     background-color: $background-color;
     z-index: 100;
     width: 100%;
-    display: flex;
+    @include display-flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     
     li {
-      width: 2.12rem;
-      height: 2.12rem;
+      @include width-heigth(2.12rem, 2.12rem);
       background-color: $background-color;
       position: relative;
       z-index: 200;
       box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5); 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include display-flex;
       border-radius: 50%;
       margin: 17px 0;
 
       &.prev:hover, &.news:hover, &.checker:hover, &.faq:hover {
         div {
           transform: rotate(270deg) translateX(-50%);
-          display: flex;
+          @include display-flex;
           left: 56px;
         }
       }
@@ -103,8 +99,7 @@ nav#side-nav {
   
   
        a {
-         width: 100%;
-         height: 100%;
+        @include width-heigth(100%, 100%);
          position: absolute;
          top: 0;
          left: 0;
@@ -117,10 +112,8 @@ nav#side-nav {
         position: absolute;
         padding: 0 21px;
         height: 30px;
-        justify-content: center;
         background-color: white;
         transform-origin: left;
-        align-items: center;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         box-shadow: 0px 5px 5px -4px rgba(31, 43, 58, 0.5);
@@ -177,14 +170,12 @@ header {
     }
     .top-cases-legend {
       span {
-        width: 9px;
-        height: 9px;
+        @include width-heigth(9px, 9px);
         border-radius: 50%;
         margin-right: 8px;
 
         @include media-min-width(40rem) {
-          width: 6px;
-          height: 6px;
+        @include width-heigth(6px, 6px);
           border-radius: 500px;
         }
       }
@@ -217,8 +208,6 @@ header {
     }
     main {
       @include display-flex();
-      align-items: center;
-      justify-content: center;
       border: 1px solid $text-color;
       padding: 7px;
 
@@ -240,9 +229,8 @@ header {
         border-radius: 9px;
         padding: 5px 8px;
         .country__name {
-          display: flex;
+          @include display-flex;
           justify-content: flex-start;
-          align-items: center;
           padding-bottom: 17px;
           p {
             font-weight: 500;
@@ -250,8 +238,7 @@ header {
 
           img {
             margin-right: 5px;
-            width: 17px;
-            height: 11px;
+            @include width-heigth(17px, 11px);
           }
         }
 
@@ -283,22 +270,19 @@ header {
       font-weight: 500;
       height: 100%;
       cursor: pointer;
-      display: flex;
+      @include display-flex;
       justify-content: flex-start;
-      align-items: center;
       position: relative;
       @include media-min-width(40rem) {
         font-size: 0.7rem;     
       }
 
       svg.sort-icon {
-        width: 20px;
-        height: 14px;
+        @include width-heigth(20px, 14px);
         fill: $text-color;
 
         @include media-min-width(40rem) {
-          width: 15px;
-          height: 10px;    
+          @include width-heigth(15px, 10px);
         }
   
       }
@@ -326,8 +310,7 @@ header {
             }
           }
           img {
-              width: 17px;
-              height: 11px;
+              @include width-heigth(17px, 11px);
           }
       }
   }
@@ -378,28 +361,29 @@ header {
   .advice-div {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    min-height: 12rem;
     main {
 
       div {
-        display: flex;
+        @include display-flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         height: 100%;
         text-align: center;
 
         h3 {
           font-size: 1rem;
           font-weight: 500;
-          margin-bottom: 5px;
+          margin-bottom: 15px;
         }
 
         p,
         a {
           font-size: 0.875rem;
+          text-align: left;
         }
 
         a {
+          display: none;
             background-color: $text-color;
             color: #ffffff;
             padding: 6px 13px;
@@ -414,6 +398,5 @@ header {
 
 #no-sort {
   color: blue;
-  width: 20px;
-  height: 20px;
+  @include width-heigth(20px, 20px);
 }

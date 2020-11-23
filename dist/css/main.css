@@ -34,6 +34,7 @@ nav#side-nav {
 
 main#main {
   grid-area: main;
+  min-width: 60.6rem;
   display: grid;
   grid-template-columns: 1fr 20rem;
   grid-template-rows: 3rem 1fr;
@@ -199,7 +200,9 @@ nav#side-nav {
   nav#side-nav:hover div.about-section {
     transform: rotate(270deg) translateX(-50%);
     animation: show-about 3s ease-out;
-    display: flex; }
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   nav#side-nav svg.logo {
     width: 2.12rem;
     height: 2.12rem;
@@ -210,9 +213,9 @@ nav#side-nav {
     z-index: 100;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: center; }
+    flex-direction: column; }
     nav#side-nav ul li {
       width: 2.12rem;
       height: 2.12rem;
@@ -228,6 +231,8 @@ nav#side-nav {
       nav#side-nav ul li.prev:hover div, nav#side-nav ul li.news:hover div, nav#side-nav ul li.checker:hover div, nav#side-nav ul li.faq:hover div {
         transform: rotate(270deg) translateX(-50%);
         display: flex;
+        justify-content: center;
+        align-items: center;
         left: 56px; }
       nav#side-nav ul li img {
         width: 1.9rem; }
@@ -242,10 +247,8 @@ nav#side-nav {
     position: absolute;
     padding: 0 21px;
     height: 30px;
-    justify-content: center;
     background-color: white;
     transform-origin: left;
-    align-items: center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0px 5px 5px -4px rgba(31, 43, 58, 0.5);
@@ -297,11 +300,9 @@ header p {
 
 #top-cases-n-map #map .top-cases-legend .most {
   display: flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between; }
   #top-cases-n-map #map .top-cases-legend .most span {
     background-color: #001233; }
   #top-cases-n-map #map .top-cases-legend .most p {
@@ -310,11 +311,9 @@ header p {
 #top-cases-n-map #map .top-cases-legend .less {
   margin-left: 20px;
   display: flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between; }
   @media (max-width: 40rem) {
     #top-cases-n-map #map .top-cases-legend .less {
       margin-left: 0; } }
@@ -325,8 +324,8 @@ header p {
 
 #top-cases-n-map #map main {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   border: 1px solid #001233;
   padding: 7px; }
   #top-cases-n-map #map main img {
@@ -334,6 +333,8 @@ header p {
 
 #top-cases-n-map #top-countries header {
   display: flex;
+  justify-content: center;
+  align-items: center;
   justify-content: flex-end; }
 
 #top-cases-n-map #top-countries main .country {
@@ -342,8 +343,9 @@ header p {
   padding: 5px 8px; }
   #top-cases-n-map #top-countries main .country .country__name {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     padding-bottom: 17px; }
     #top-cases-n-map #top-countries main .country .country__name p {
       font-weight: 500; }
@@ -353,11 +355,9 @@ header p {
       height: 11px; }
   #top-cases-n-map #top-countries main .country .cases {
     display: flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    justify-content: space-between;
-    align-items: center; }
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between; }
     #top-cases-n-map #top-countries main .country .cases div p:nth-of-type(1) {
       font-size: 0.7rem;
       padding-bottom: 8px; }
@@ -373,8 +373,9 @@ header p {
     height: 100%;
     cursor: pointer;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     position: relative; }
     @media (max-width: 40rem) {
       #all-countries header div p {
@@ -437,22 +438,25 @@ header p {
 
 .brief .advice-div {
   border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; }
+  border-bottom-left-radius: 0;
+  min-height: 12rem; }
   .brief .advice-div main div {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100%;
     text-align: center; }
     .brief .advice-div main div h3 {
       font-size: 1rem;
       font-weight: 500;
-      margin-bottom: 5px; }
+      margin-bottom: 15px; }
     .brief .advice-div main div p,
     .brief .advice-div main div a {
-      font-size: 0.875rem; }
+      font-size: 0.875rem;
+      text-align: left; }
     .brief .advice-div main div a {
+      display: none;
       background-color: #001233;
       color: #ffffff;
       padding: 6px 13px;

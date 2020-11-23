@@ -42,6 +42,7 @@ nav#side-nav {
 
 main#main {
   grid-area: main;
+  min-width: 60.6rem;
   display: grid;
   grid-template-columns: 1fr 20rem;
   grid-template-rows: 3rem 1fr;
@@ -249,17 +250,6 @@ section.brief {
 
     @include media-min-width(40rem) {
       display: none;
-    }
-
-    main {
-      // display: grid;
-      // grid-template-columns: auto 1fr;
-      // column-gap: 7px;
-      // align-items: center;
-
-      // img {
-      //     width: 5rem;
-      // }
     }
   }
 }

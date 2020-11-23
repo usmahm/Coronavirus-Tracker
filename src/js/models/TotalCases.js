@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import axios from 'axios';
 import sort from 'fast-sort';
 
-// import { totalCasesData } from './data'
+import { totalCasesData } from './data'
 
 export default class TotalCases {
     constructor() {
@@ -11,9 +11,9 @@ export default class TotalCases {
 
     async getTotalCases () {
         try {
-            const res = await axios("https://corona.lmao.ninja/v2/all?yesterday");
+            // const res = await axios("https://corona.lmao.ninja/v2/all?yesterday");
             // console.log(totalCasesData)
-            // const res = totalCasesData;
+            const res = totalCasesData;
             // console.log(res)
             this.totalCases = res.data;
         } catch (err) {

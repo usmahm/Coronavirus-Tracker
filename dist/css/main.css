@@ -48,6 +48,7 @@ main#main {
       row-gap: 6px;
       padding: 0 6px;
       padding-top: 10px;
+      min-width: auto;
       grid-template-areas: "header" "total-info" "main-info"; } }
 
 header {

@@ -6,7 +6,7 @@
     "*.scss"
   ],
   "version": "1.0.0",
-  "description": "Track coronavirus cases",
+  "description": "Coronovirus Tracker",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",

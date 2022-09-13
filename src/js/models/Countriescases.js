@@ -13,12 +13,14 @@ export default class CountriesCases {
 
     async getCountriesCases() {
         try {
-            const res = await axios('https://corona.lmao.ninja/v2/countries?yesterday&sort');
+            const res = await axios('https://disease.sh/v3/covid-19/countries?yesterday&sort');
+            // const res = await axios('https://corona.lmao.ninja');
             // const res = cases;
+            console.log('result', res);
             this.allCountriesCases = res.data;
             // console.log(res)
         } catch (error) {
-            // console.log(error)
+            console.log('erororororo', error)
         }
     }
 

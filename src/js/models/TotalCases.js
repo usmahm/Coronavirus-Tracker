@@ -11,7 +11,7 @@ export default class TotalCases {
 
     async getTotalCases () {
         try {
-            const res = await axios("https://corona.lmao.ninja/v2/all?yesterday");
+            const res = await axios("https://disease.sh/v3/covid-19/all?yesterday");
             // console.log(totalCasesData)
             // const res = totalCasesData;
             // console.log(res)

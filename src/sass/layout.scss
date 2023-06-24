@@ -6,6 +6,8 @@
   }
 }
 
+$sidesection_width: 20rem;
+
 body {
   display: grid;
   grid-template-columns: 3rem 1fr;
@@ -44,7 +46,7 @@ main#main {
   grid-area: main;
   min-width: 60.6rem;
   display: grid;
-  grid-template-columns: 1fr 20rem;
+  grid-template-columns: 1fr $sidesection_width;
   grid-template-rows: 3rem 1fr;
   column-gap: $space-between;
   padding: 0 $space-between;
@@ -104,8 +106,8 @@ section.all-cases {
 
   #top-cases-n-map {
     display: grid;
-    grid-template-columns: 1fr 14rem;
-    column-gap: 10px;
+    grid-template-columns: 1fr 15.5rem;
+    column-gap: 6px;
     padding: 0 $section-padding;
     padding-bottom: $section-padding;
 
@@ -191,15 +193,15 @@ section.all-cases {
 
 section.brief {
   grid-area: total-info;
-  display: grid;
-  grid-template-rows: repeat(2, minmax(11.75rem, 1fr)) auto;
-  row-gap: 8px;
-  align-content: center;
+
+  display: flex;
+  flex-direction: column;
 
   div.total-cases {
     display: grid;
     grid-template-rows: 2.5rem 1fr;
-    // height: 16.9rem;
+    height: 11.75rem;
+    margin-bottom: 8px;
 
     main {
       display: grid;
@@ -246,6 +248,10 @@ section.brief {
   }
 
   .advice-div {
+    width: $sidesection_width;
+    position: absolute;
+    bottom: 0;
+    right: 13px;
     display: grid;
     grid-template-rows: 2.5rem 1fr;
 

@@ -12,7 +12,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "compile:sass": "node-sass src/sass/main.scss dist/css/main.css -w"
+    "compile:sass": "sass src/sass/main.scss dist/css/main.css -w"
   },
   "author": "Ahmad Usman",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
     "html-webpack-plugin": "^4.5.0",
-    "node-sass": "^4.14.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
@@ -31,6 +30,7 @@
     "@amcharts/amcharts4-geodata": "^4.1.17",
     "axios": "^0.20.0",
     "babel-polyfill": "^6.26.0",
-    "fast-sort": "^2.2.0"
+    "fast-sort": "^2.2.0",
+    "sass": "^1.63.6"
   }
 }

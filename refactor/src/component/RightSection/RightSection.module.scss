@@ -1,0 +1,10 @@
+@import "../../shared/_variables.scss";
+@import "../../shared/_mixins.scss";
+
+
+.brief {
+  grid-area: total-info;
+
+  display: flex;
+  flex-direction: column;
+}

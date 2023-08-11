@@ -1,0 +1,21 @@
+@mixin media-min-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  @include display-flex;
+  justify-content: space-between;
+}
+
+@mixin width-heigth ($width, $height) {
+  width: $width;
+  height: $height;
+}

@@ -1,0 +1,135 @@
+@import "../../../shared/_variables.scss";
+@import "../../../shared/mixins.scss";
+
+.generalInfo {
+  display: grid;
+  grid-template-columns: 1fr 15.5rem;
+  column-gap: 6px;
+  padding: 0 $section-padding;
+  padding-bottom: $section-padding;
+
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+  border-radius: $border-radius;
+  background-color: $background-color;
+
+  @include media-min-width(40rem) {
+    grid-template-columns: 1fr;
+  }
+
+  .map,
+  .topCountries {
+    display: grid;
+    grid-template-rows: 2.5rem 1fr;
+  }
+
+  .topCountries main {
+    display: grid;
+    grid-template-rows: repeat(4, 5.5rem);
+    align-content: space-between;
+  }
+}
+
+
+.generalInfo {
+  .map {
+    p {
+      @include media-min-width(40rem) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .topCasesLegend {
+      display: flex;
+      
+      span {
+        @include width-heigth(9px, 9px);
+        border-radius: 50%;
+        margin-right: 8px;
+
+        @include media-min-width(40rem) {
+        @include width-heigth(6px, 6px);
+          border-radius: 500px;
+        }
+      }
+
+      .most {
+        @include flex-space-between();
+        span {
+          background-color: #001233;
+        }
+        p {
+          color: #001233;
+        }
+      }
+
+      .less {
+        margin-left: 20px;
+        @include flex-space-between();
+
+        @include media-min-width(40rem) {
+          margin-left: 0;
+        }
+        span {
+          background-color: #0466c8;
+        }
+
+        p {
+          color: #0466c8;
+        }
+      }
+    }
+    main {
+      @include display-flex();
+      border: 1px solid $text-color;
+      padding: 7px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .topCountries {
+    header {
+      @include display-flex();
+      justify-content: flex-end;
+    }
+
+    main {
+      .country {
+        border: 2px dotted #001845;
+        border-radius: 9px;
+        padding: 5px 8px;
+        .country__name {
+          @include display-flex;
+          justify-content: flex-start;
+          padding-bottom: 17px;
+          p {
+            font-weight: 500;
+          }
+
+          img {
+            margin-right: 5px;
+            @include width-heigth(17px, 11px);
+          }
+        }
+
+        .cases {
+          @include flex-space-between();
+
+          div {
+            p:nth-of-type(1) {
+              font-size: 0.7rem;
+              padding-bottom: 8px;
+            }
+
+            p:nth-of-type(2) {
+              font-size: 0.875rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

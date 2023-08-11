@@ -1,0 +1,64 @@
+@import "../../../shared/_variables.scss";
+@import "../../../shared/mixins.scss";
+
+.advice_div {
+  width: $sidesection_width;
+  position: absolute;
+  bottom: 0;
+  right: 13px;
+  display: grid;
+  grid-template-rows: 2.5rem 1fr;
+
+  @include media-min-width(40rem) {
+    display: none;
+  }
+}
+
+.advice_div {
+  border-radius: $border-radius;
+  background-color: $background-color;
+
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+  padding: 0 13px;
+  padding-bottom: 13px;
+
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  min-height: 12rem;
+
+  main p,
+  p span {
+    font-size: 0.7rem
+  }
+
+  main {
+    div {
+      @include display-flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      p,
+      a {
+        font-size: 0.875rem;
+        text-align: left;
+      }
+
+      a {
+        display: none;
+          background-color: $text-color;
+          color: #ffffff;
+          padding: 6px 13px;
+          margin-top: 5px;
+          margin-top: 8px;
+          border-radius: 8px;
+      }
+    }
+  }
+}

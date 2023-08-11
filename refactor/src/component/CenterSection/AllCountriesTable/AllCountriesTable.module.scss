@@ -1,0 +1,127 @@
+@import "../../../shared/_variables.scss";
+@import "../../../shared/mixins.scss";
+
+.all_countries {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+
+  @include media-min-width(40rem) {
+    grid-template-columns: 100%;
+    overflow-x: scroll; 
+  }
+
+  thead tr {
+    display: grid;
+    grid-template-columns: 8rem repeat(6, 1fr);
+    column-gap: 5px;
+    padding-left: 23px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+
+    @include media-min-width(40rem) {
+      padding-left: 10px;
+      grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));   
+      width: auto;
+    }
+  }
+
+  .body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-min-width(40rem) {
+      overflow: visible; 
+    }
+    
+    tbody {
+      display: grid;
+      grid-auto-rows: 3rem;
+      align-items: center;
+
+      tr {
+        display: grid;
+        grid-template-columns: 8rem repeat(6, 1fr);
+        column-gap: 5px;
+        padding-left: 23px;
+        height: 100%;
+        align-items: center;
+
+        @include media-min-width(40rem) {
+          padding-left: 10px;
+          grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));
+        }
+
+        &.grey-background {
+          background-color: #f2f3f5;
+        }
+      }
+    }
+  }
+}
+
+.all_countries {
+  border-radius: $border-radius;
+  background-color: $background-color;
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+
+  thead tr {
+    box-shadow: 0 10px 28px -14px rgba(31, 43, 58, 0.5);
+    border-bottom: 1px solid #0012338f;
+    
+    th {
+      font-weight: 500;
+      height: 100%;
+      cursor: pointer;
+      @include display-flex;
+      justify-content: flex-start;
+      position: relative;
+      @include media-min-width(40rem) {
+        font-size: 0.7rem;     
+      }
+
+      svg.sort-icon {
+        @include width-heigth(20px, 14px);
+        fill: $text-color;
+
+        @include media-min-width(40rem) {
+          @include width-heigth(15px, 10px);
+        }
+  
+      }
+    }
+  }
+
+  tbody {
+    tr {
+        border-bottom: 1px solid #0012338f;
+        
+        @include media-min-width(40rem) {
+          font-size: 0.7rem;   
+        }
+        
+        .danger {
+          color:  #e85347;
+        }
+
+        td {
+          display: grid;
+          grid-template-columns: 17px 1fr;
+          column-gap: 5px;
+          align-items: center;
+
+          p {
+            display: inline-block;
+          }
+        }
+
+        img {
+          @include width-heigth(17px, 11px);
+        }
+      }
+  }
+}

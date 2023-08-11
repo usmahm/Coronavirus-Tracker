@@ -1,0 +1,38 @@
+@import "../../../../shared/_variables.scss";
+@import "../../../../shared/mixins.scss";
+
+.country {
+  border: 2px dotted #001845;
+  border-radius: 9px;
+  padding: 5px 8px;
+  
+  &__name {
+    @include display-flex;
+    justify-content: flex-start;
+    padding-bottom: 17px;
+    p {
+      font-weight: 500;
+    }
+
+    img {
+      margin-right: 5px;
+      @include width-heigth(17px, 11px);
+    }
+  }
+
+  &__cases {
+    @include flex-space-between();
+
+    div {
+      p:nth-of-type(1) {
+        font-size: 0.7rem;
+        padding-bottom: 8px;
+      }
+
+      p:nth-of-type(2) {
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

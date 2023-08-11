@@ -1,0 +1,107 @@
+@import "../../shared/mixins.scss";
+@import "../../shared/_variables.scss";
+
+.sideNav {
+  grid-area: menu;
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  grid-template-areas:
+    "logo"
+    "navs";
+  justify-items: center;
+  align-items: center;
+
+  .logo {
+    grid-area: logo;
+  }
+
+  ul {
+    grid-area: navs;
+  }
+
+  @include media-min-width(40rem) {
+    display: none;
+  }
+}
+
+.sideNav {
+  background-color: $background-color;
+  transition: .3s;
+  position: relative;
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+
+  &:hover {
+    .about_section {
+      transform: rotate(270deg) translateX(-50%);
+      animation: show-about 3s ease-out;
+      @include display-flex;
+    }
+  }
+
+  .logo {
+    @include width-heigth(2.12rem, 2.12rem);
+    fill: $text-color;
+  }
+  
+
+  ul {
+    position: relative;
+    background-color: $background-color;
+    z-index: 100;
+    width: 100%;
+    @include display-flex;
+    flex-direction: column;
+    
+    li {
+      @include width-heigth(2.12rem, 2.12rem);
+      background-color: $background-color;
+      position: relative;
+      z-index: 200;
+      box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5); 
+      @include display-flex;
+      border-radius: 50%;
+      margin: 17px 0;
+
+      &.prev:hover, &.news:hover, &.checker:hover, &.faq:hover {
+        .faqt {
+          transform: rotate(270deg) translateX(-50%);
+          @include display-flex;
+          left: 56px;
+        }
+      }
+
+        img {
+          width: 1.9rem;
+        }
+  
+  
+       a {
+        @include width-heigth(100%, 100%);
+         position: absolute;
+         top: 0;
+         left: 0;
+       }
+       
+    }
+    
+  }
+  
+  div {
+    display: none;
+    position: absolute;
+    padding: 0 21px;
+    height: 30px;
+    background-color: white;
+    transform-origin: left;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 5px 5px -4px rgba(31, 43, 58, 0.5);
+    font-weight: 500;
+
+    p {
+      color: $text-color;
+      transition: .3s;
+      white-space: nowrap;
+    }
+  }
+}

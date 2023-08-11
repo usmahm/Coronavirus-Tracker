@@ -1,0 +1,40 @@
+@import "../../shared/mixins.scss";
+@import "../../shared/_variables.scss";
+
+.container {
+  background-color: #E5E5E5;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: "menu main";
+
+  @include media-min-width(40rem) {
+    display: block;
+  }
+}
+
+.main {
+  grid-area: main;
+  min-width: 60.6rem;
+  display: grid;
+  grid-template-columns: 1fr $sidesection_width;
+  grid-template-rows: 3rem 1fr;
+  column-gap: $space-between;
+  padding: 0 $space-between;
+  grid-template-areas:
+    "header header"
+    "main-info total-info";
+
+  @include media-min-width(40rem) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 1fr;
+    row-gap: 6px;
+    padding: 0 6px;
+    padding-top: 10px;
+    min-width: auto;
+    grid-template-areas:
+      "header"
+      "total-info"
+      "main-info";
+  }
+}

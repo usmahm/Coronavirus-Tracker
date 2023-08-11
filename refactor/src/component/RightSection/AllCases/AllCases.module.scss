@@ -1,0 +1,93 @@
+@import "../../../shared/_variables.scss";
+
+.totalCases {
+  display: grid;
+  grid-template-rows: 2.5rem 1fr;
+  height: 11.75rem;
+  margin-bottom: 8px;
+
+  main {
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    row-gap: 15px;
+
+    .totalBreakdown {
+      display: grid;
+      grid-template-columns: auto repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 14px;
+      row-gap: 12px;
+      grid-template-areas:
+        "chart active recorded"
+        "chart deaths ...";
+      align-items: center;
+
+      .chart {
+        grid-area: chart;
+        width: 5rem;
+        height: 5rem;
+      }
+
+      div {
+        p.num {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+
+      &__active {
+        grid-area: active;
+      }
+
+      &__rec {
+        grid-area: recorded;
+      }
+
+      &__deaths {
+        grid-area: deaths;
+      }
+    }
+  }
+}
+
+.totalCases {
+  border-radius: $border-radius;
+  background-color: $background-color;
+  box-shadow: 0 0 5px -1px rgba(31, 43, 58, 0.5);
+  padding: 0 13px;
+  padding-bottom: 13px;
+
+
+  main p,
+  p span {
+    font-size: 0.7rem
+  }
+
+  // .total-cases {
+  //   .totalConfirmed {
+  //     p.num {
+  //       font-size: 1.8rem;
+  //       font-weight: 700;
+  //     }
+  //   }
+  // }
+
+  .totalBreakdown {
+    &__active, &__deaths, &__rec {
+      padding-left: 5px;
+      border-left: 2px solid;
+    }
+  
+    &__active {
+      border-color: #3f506f;
+    }
+    
+    &__deaths {
+      border-color: #e85347;
+    }
+    
+    &__rec {
+      border-color: #1ee0ac;
+    }
+  }
+}

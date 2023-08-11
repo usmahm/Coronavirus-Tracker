@@ -1,0 +1,29 @@
+@import "../../shared/_variables.scss";
+@import "../../shared/mixins.scss";
+
+.mainHeader {
+  grid-area: header;
+
+  @include media-min-width(40rem) {
+    padding-bottom: 4px;
+    display: block;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    @include media-min-width(40rem) {
+      font-size: 1.4rem;
+      padding-bottom: 4px;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+
+    @include media-min-width(40rem) {
+      font-size: 0.75rem;
+    }
+  }
+}

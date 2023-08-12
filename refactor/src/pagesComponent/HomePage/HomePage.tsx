@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className={styles.container}>
       <SideBar />
       <main className={styles.main}>
-        <Header lastUpdatedTime={lastUpdatedTime && `${lastUpdatedTime.month} ${lastUpdatedTime.date}, ${lastUpdatedTime.year} ${lastUpdatedTime.hours}:${lastUpdatedTime.min} (${lastUpdatedTime.timezone})`} />
+        <Header lastUpdatedTime={lastUpdatedTime && ` ${lastUpdatedTime.month} ${lastUpdatedTime.date}, ${lastUpdatedTime.year} ${lastUpdatedTime.hours}:${lastUpdatedTime.min} (${lastUpdatedTime.timezone})`} />
         <CenterSection />
         <RightSection />
       </main>

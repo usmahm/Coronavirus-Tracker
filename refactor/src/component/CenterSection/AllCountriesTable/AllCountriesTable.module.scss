@@ -21,7 +21,7 @@
 
     @include media-min-width(40rem) {
       padding-left: 10px;
-      grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));   
+      grid-template-columns: 7rem repeat(6, minmax(3.7rem, 1fr));   
       width: auto;
     }
   }
@@ -53,7 +53,7 @@
 
         @include media-min-width(40rem) {
           padding-left: 10px;
-          grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));
+          grid-template-columns: 7rem repeat(6, minmax(3.7rem, 1fr));
         }
 
         &.grey_background {

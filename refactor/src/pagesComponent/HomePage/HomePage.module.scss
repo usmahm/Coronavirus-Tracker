@@ -15,7 +15,7 @@
 
 .main {
   grid-area: main;
-  min-width: 60.6rem;
+  // min-width: 60.6rem;
   display: grid;
   grid-template-columns: 1fr $sidesection_width;
   grid-template-rows: 5rem 1fr;

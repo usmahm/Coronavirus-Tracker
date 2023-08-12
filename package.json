@@ -1,36 +1,31 @@
 {
-  "name": "covid-tracker",
-  "sideEffects": [
-    "babel-polyfill",
-    "*.css",
-    "*.scss"
-  ],
-  "version": "1.0.0",
-  "description": "Coronovirus Tracker",
-  "main": "index.js",
+  "name": "refactor",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open",
-    "compile:sass": "sass src/sass/main.scss dist/css/main.css -w"
-  },
-  "author": "Ahmad Usman",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "babel-loader": "^8.1.0",
-    "html-webpack-plugin": "^4.5.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.7",
     "@amcharts/amcharts4-geodata": "^4.1.17",
-    "axios": "^0.20.0",
-    "babel-polyfill": "^6.26.0",
-    "fast-sort": "^2.2.0",
-    "sass": "^1.63.6"
+    "@types/node": "20.4.8",
+    "@types/react": "18.2.19",
+    "@types/react-dom": "18.2.7",
+    "axios": "^1.4.0",
+    "clsx": "^2.0.0",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "next": "12.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.64.2",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.0.1"
   }
 }

@@ -1,9 +1,72 @@
 @import "../../shared/_variables.scss";
 @import "../../shared/mixins.scss";
 
+.scrollContainer {
+  position: absolute;
+  width: calc(100vw - 3rem);
+  left: 3rem;
+  background-color: #001233;
+  height: 2rem;
+  @include display-flex;
+  
+  @include media-min-width(40rem) {
+    width: 100vw;
+    left: 0;
+    top: 0;
+  }
+  
+  div {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 10px;
+  }
+}
+
+.scrollText {
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  white-space: nowrap;
+
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
 .mainHeader {
   grid-area: header;
-
+  padding-top: 2rem;
+  
   @include media-min-width(40rem) {
     padding-bottom: 4px;
     display: block;

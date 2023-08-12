@@ -18,7 +18,7 @@
   min-width: 60.6rem;
   display: grid;
   grid-template-columns: 1fr $sidesection_width;
-  grid-template-rows: 3rem 1fr;
+  grid-template-rows: 5rem 1fr;
   column-gap: $space-between;
   padding: 0 $space-between;
   grid-template-areas:
@@ -27,7 +27,7 @@
 
   @include media-min-width(40rem) {
     grid-template-columns: 1fr;
-    grid-template-rows: 3rem 1fr;
+    grid-template-rows: 5 1fr;
     row-gap: 6px;
     padding: 0 6px;
     padding-top: 10px;

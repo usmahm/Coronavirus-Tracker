@@ -1,47 +1,47 @@
 import React from "react";
-import styles from "./GeneralInfo.module.scss";
+import dynamic from 'next/dynamic';
+
 import TopCountryInfo from "./TopCountryInfo/TopCountryInfo";
+import { CountryCaseData, MapVizDataType } from "../../../types";
+import styles from "./GeneralInfo.module.scss";
 
+const MapViz = dynamic(() => import("./MapViz/MapViz"), { ssr: false });
 
-const GeneralInfo = () => {
-  const data = {
-    country: 'NIG',
-    flag: '',
-    totalConfirmed: 50000,
-    totalRecovered: 900,
-    totalDeaths: 3000,
-  }
+type ComponentProps = {
+  topCountriesData: CountryCaseData[][];
+  allCountriesData: MapVizDataType[];
+}
 
+const GeneralInfo: React.FC<ComponentProps> = ({ topCountriesData, allCountriesData }) => {
   return (
     <section className={styles.generalInfo}>
       <div className={styles.map}>
-          <header>
-              <p>COVID-19 <span>- Affected Areas</span></p>
-              <div className={styles.topCasesLegend}>
-                  <div className={styles.most}>
-                      <span></span>
-                      <p>Most Affected</p>
-                  </div>
-                  <div className={styles.less}>
-                      <span></span>
-                      <p>Less Affected</p>
-                  </div>
-              </div>
-          </header>
-          <main>
-              {/* <div style="width: 100%; height: 100%;" id="map-div">
-
-              </div> */}
-              {/* <!-- <img src="./img/map.png" alt="Map Showning Cases by country"> --> */}
-          </main>
+        <header>
+          <p>COVID-19 <span>- Affected Areas</span></p>
+          <div className={styles.topCasesLegend}>
+            <div className={styles.most}>
+              <span></span>
+              <p>Most Affected</p>
+            </div>
+            <div className={styles.less}>
+              <span></span>
+              <p>Less Affected</p>
+            </div>
+          </div>
+        </header>
+        <main>
+          <MapViz allCountriesData={allCountriesData}  />
+        </main>
       </div>
       <div className={styles.topCountries}>
-          <header>
-              <p>Top Countries</p>
-          </header>
-          <main>
-            <TopCountryInfo data={data} />
-          </main>
+        <header>
+          <p>Top Countries</p>
+        </header>
+        <main>
+          {topCountriesData.length ? topCountriesData.map((countryData) => (
+            <TopCountryInfo key={countryData[0].val} countryData={countryData} />
+          )) : null}
+        </main>
       </div>
     </section>
   )

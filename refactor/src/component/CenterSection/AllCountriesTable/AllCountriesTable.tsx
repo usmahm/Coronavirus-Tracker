@@ -1,71 +1,88 @@
 import React from "react";
+import clsx from "clsx";
+
+import { CountryCaseData, SortedByType } from "../../../types";
+import { numberWithCommas } from "../../../utils/formatters";
+import NoSortIcon from '../../../../public/icons/no_sort.svg';
+import SortDescIcon from '../../../../public/icons/sort_desc.svg';
+import SortAscIcon from '../../../../public/icons/sort_asc.svg';
+
 import styles from "./AllCountriesTable.module.scss";
 
 type Props = {
   tableHeadData: string[];
-  tableBodyData: {
-    val: string;
-    type: 'NORMAL' | 'RED';
-    flag?: string;
-  }[][]
+  tableBodyData: CountryCaseData[][]
+  sortedBy: SortedByType | null;
+  sortTableHandler: (sortBy: SortedByType) => void;
 }
 
-const AllCountriesTable: React.FC<Props> = ({ tableHeadData, tableBodyData }) => {
+const AllCountriesTable: React.FC<Props> = ({ tableHeadData, tableBodyData, sortedBy, sortTableHandler }) => {
+  console.log("HEYYsd",  sortedBy)
   return (
     <table className={styles.all_countries}>
       <thead>
         <tr>
           {tableHeadData.map((item) => (
-            <th key={item} className="country-name" data-sort-param="countryName" data-sortby="asc">{item}
-              {/* <svg className="sort-icon"><use className="no-sort" xlink:href="#no-sort" /></svg> */}
+            <th key={item} className="country-name" data-sort-param="countryName" data-sortby="asc">
+              <button
+                onClick={() => sortTableHandler({
+                  by: item,
+                  dir: sortedBy?.by === item && sortedBy.dir === 'DESC' ? 'ASC' : 'DESC',
+                })}
+              >
+                {item.split(' ').map((el, i) => (
+                    <>
+                      {i > 0 && <br />}
+                      {el}
+                    </>
+                  )
+                )}
+                {sortedBy && sortedBy.by === item ? (
+                  <>
+                    {sortedBy.dir === 'ASC'
+                      ? <SortAscIcon className={styles.sort_icon} />
+                      : <SortDescIcon className={styles.sort_icon} />
+                    }
+                  </>
+                ) : <NoSortIcon className={styles.sort_icon} />}
+              </button>
             </th>
           ))}
-            {/* <p className="country-name" data-sort-param="countryName" data-sortby="asc">Country
-                <svg className="sort-icon"><use className="no-sort" xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="total-cases" data-sort-param="totalCases" data-sortby="asc">Total <br> Cases
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="new-cases" data-sort-param="newCases" data-sortby="asc">New <br> Cases
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="total-deaths" data-sort-param="totalDeaths" data-sortby="asc">Total <br> Deaths
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="new-deaths" data-sort-param="newDeaths" data-sortby="asc">New <br> Deaths
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="total-recovered" data-sort-param="totalRec" data-sortby="asc">Total <br> Recovered
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p>
-            <p className="active-cases" data-sort-param="activeCases" data-sortby="asc">Active <br> Cases
-                <svg className="sort-icon"><use xlink:href="#no-sort" /></svg>
-            </p> */}
         </tr>
       </thead>
 
-      <div className={styles.body}>
-        <tbody>
-          {/* {tableBodyData.map((row, i) => {
-            const k = `tr-${row}-${i}`;
+      <tbody>
+        <div className={styles.body}>
+          {tableBodyData.map((row, i) => {
+            const k = `tr-${row[0].val}-${i}`;
 
             return (
-              <tr key={k}>
-                {row.map((item) => {
-                  const key = `${row}-${i}-${item.val}`;
+              <tr
+                key={k}
+                className={clsx({
+                  [styles.grey_background]: i % 2 !== 0 
+                })}
+              >
+                {row.map((item, j) => {
+                  const key = `${row[0].val}-${j}-${item.val}`;
 
                   return (
-                    <td key={key} className={item.type === 'RED' ? styles.danger : undefined}>
+                    <td
+                      key={key}
+                      className={clsx({
+                        [styles.danger]: item.type === 'RED',
+                      })}
+                    >
                       {item.flag && <img src={item.flag} alt="" />}
-                      {item.val}
+                      {typeof item.val === 'string' ? item.val : numberWithCommas(item.val)}
                     </td>
                   );
                 })}
               </tr>
             );
-          })} */}
-        </tbody>
-      </div>
+          })}
+        </div>
+      </tbody>
     </table>
   )  
 }

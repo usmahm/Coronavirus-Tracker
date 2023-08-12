@@ -1,35 +1,43 @@
 import React from "react";
 import styles from "./TopCountryInfo.module.scss";
+import { CountryCaseData } from "../../../../types";
+import { numberWithCommas } from "../../../../utils/formatters";
 
 type ComponentProps = {
-  data: {
-    country: String;
-    flag: String;
-    totalConfirmed: number;
-    totalRecovered: number;
-    totalDeaths: number;
-  };
+  countryData: CountryCaseData[]
 }
 
-const TopCountryInfo: React.FC<ComponentProps> = ({ data }) => {
+const TopCountryInfo: React.FC<ComponentProps> = ({ countryData }) => {
   return (
     <div className={styles.country}>
       <div className={styles.country__name}>
-        <img src={data.flag} alt="" />
-        <p className={styles.name}>{data.country}</p>
+        {countryData[0].flag && <img src={countryData[0].flag} alt="" />}
+        <p className={styles.name}>{countryData[0].val}</p>
       </div>
       <div className={styles.country__cases}>
           <div className={styles.confirmed}>
               <p>CONFIRMED</p>
-              <p>{data.totalConfirmed}</p>
+              <p>
+                {typeof countryData[1].val === 'string' 
+                  ? countryData[1].val
+                  : numberWithCommas(countryData[1].val)}
+              </p>
           </div>
           <div className={styles.recovered}>
               <p>RECOVERED</p>
-              <p>{data.totalRecovered}</p>
+              <p>
+                {typeof countryData[5].val === 'string' 
+                  ? countryData[5].val
+                  : numberWithCommas(countryData[5].val)}
+              </p>
           </div>
           <div className={styles.deaths}>
               <p>DEATHS</p>
-              <p>{data.totalDeaths}</p>
+              <p>
+                {typeof countryData[3].val === 'string' 
+                  ? countryData[3].val
+                  : numberWithCommas(countryData[3].val)}
+              </p>
           </div>
       </div>
     </div> 

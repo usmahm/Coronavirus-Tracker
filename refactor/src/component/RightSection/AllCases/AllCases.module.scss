@@ -63,14 +63,12 @@
     font-size: 0.7rem
   }
 
-  // .total-cases {
-  //   .totalConfirmed {
-  //     p.num {
-  //       font-size: 1.8rem;
-  //       font-weight: 700;
-  //     }
-  //   }
-  // }
+  .totalConfirmed {
+    p.num {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  }
 
   .totalBreakdown {
     &__active, &__deaths, &__rec {

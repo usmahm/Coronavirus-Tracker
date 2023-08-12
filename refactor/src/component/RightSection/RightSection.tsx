@@ -2,21 +2,19 @@ import React from "react";
 import styles from "./RightSection.module.scss";
 import AllCases from "./AllCases/AllCases";
 import AdviceFooter from "./AdviceFooter/AdviceFooter";
+import { useTotalCases } from "../../contexts/TotalCasesContext";
 
 
 const RightSection = () => {
-  const total = {
-    total: 50000,
-    totalRecovered: 900,
-    totalActive: 0,
-    totalDeaths: 3000,
-  }
+  const { totalData, todayData } = useTotalCases();
+
   return (
     <section className={styles.brief}>
-      <AllCases type="TOTAL" total={total}  />
-      <AllCases type="DAILY" total={total} />
+      <AllCases type="TOTAL" total={totalData}  />
+      <AllCases type="DAILY" total={todayData} />
       <AdviceFooter />
     </section>
+    // <div />
   )
 }
 

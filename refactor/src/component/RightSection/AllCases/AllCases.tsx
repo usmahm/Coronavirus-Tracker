@@ -1,13 +1,15 @@
 import React from "react";
+import dynamic from 'next/dynamic';
+
+import { TotalCasesDataType } from "../../../types";
+import { numberWithCommas } from "../../../utils/formatters";
+import PreventionIcon from '../../../../public/icons/prevention.svg'
 import styles from "./AllCases.module.scss";
 
+const PieChart = dynamic(() => import("./PieChart/PieChart"), { ssr: false });
+
 type Props = {
-  total: {
-    total: number;
-    totalRecovered: number;
-    totalActive: number;
-    totalDeaths: number;
-  };
+  total: TotalCasesDataType | null;
   type: 'TOTAL' | 'DAILY'
 }
 
@@ -20,26 +22,36 @@ const AllCases: React.FC<Props> = ({ total, type }) => {
       </header>
       <main>
         <div className={styles.totalConfirmed}>
-          <p className={styles.num}>{total.total}</p>
+          <p className={styles.num}>{total?.totalConfirmed ? numberWithCommas(total.totalConfirmed) : total?.totalConfirmed}</p>
           <p>Total Confirmed Cases</p>
         </div>
         <div className={styles.totalBreakdown}>
           {type === 'TOTAL' ? (
-            <img className={styles.chart} src="./img/pie chart.png" alt="" />
+            <>
+              {total && <PieChart data={total} />}
+            </>
           ) : (
-            <div />
-            // <svg className={styles.chart}><use xlink:href="#disease-prevention" /></svg>
+            <PreventionIcon className={styles.chart} />
           )}
           <div className={styles.totalBreakdown__active}>
-              <p className={styles.num}>{total.totalActive}</p>
-              <p>Active Cases</p>
+            {type === 'TOTAL' && total?.totalActive ? (
+              <>
+                <p className={styles.num}>{total?.totalActive ? numberWithCommas(total.totalActive) : ''}</p>
+                <p>Active Cases</p>
+              </>
+            ) : (
+              <>
+                <p className={styles.num}>{total?.totalCritical ? numberWithCommas(total.totalCritical) : ''}</p>
+                <p>Critical Cases</p>
+              </>
+            )}
           </div>
           <div className={styles.totalBreakdown__rec}>
-              <p className={styles.num}>{total.totalRecovered}</p>
+              <p className={styles.num}>{total?.totalRecovered ? numberWithCommas(total?.totalRecovered) : ''}</p>
               <p>Recovered</p>
           </div>
           <div className={styles.totalBreakdown__deaths}>
-              <p className={styles.num}>{total.totalDeaths}</p>
+              <p className={styles.num}>{total?.totalDeaths ? numberWithCommas(total?.totalDeaths) : total?.totalDeaths}</p>
               <p>Deaths</p>
           </div>
         </div>

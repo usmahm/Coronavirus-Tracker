@@ -26,7 +26,7 @@
     }
   }
 
-  .body {
+  tbody {
     overflow-y: scroll;
     scrollbar-width: none;
 
@@ -38,7 +38,7 @@
       overflow: visible; 
     }
     
-    tbody {
+    .body {
       display: grid;
       grid-auto-rows: 3rem;
       align-items: center;
@@ -56,7 +56,7 @@
           grid-template-columns: 7rem repeat(6, minmax(3.25rem, 1fr));
         }
 
-        &.grey-background {
+        &.grey_background {
           background-color: #f2f3f5;
         }
       }
@@ -74,24 +74,30 @@
     border-bottom: 1px solid #0012338f;
     
     th {
-      font-weight: 500;
       height: 100%;
-      cursor: pointer;
-      @include display-flex;
-      justify-content: flex-start;
       position: relative;
-      @include media-min-width(40rem) {
-        font-size: 0.7rem;     
-      }
 
-      svg.sort-icon {
-        @include width-heigth(20px, 14px);
-        fill: $text-color;
-
+      button {
+        all: unset;
+        width: 100%;
+        font-weight: 500;
+        height: 100%;
+        cursor: pointer;
+        @include display-flex;
+        justify-content: flex-start;
+        text-align: left;
         @include media-min-width(40rem) {
-          @include width-heigth(15px, 10px);
+          font-size: 0.7rem;     
         }
+       
+        svg.sort_icon {
+          @include width-heigth(20px, 14px);
+          fill: $text-color;
   
+          @include media-min-width(40rem) {
+            @include width-heigth(15px, 10px);
+          }
+        }
       }
     }
   }
@@ -113,10 +119,6 @@
           grid-template-columns: 17px 1fr;
           column-gap: 5px;
           align-items: center;
-
-          p {
-            display: inline-block;
-          }
         }
 
         img {
